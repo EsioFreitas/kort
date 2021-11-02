@@ -13,7 +13,7 @@ import {
   FormLabel,
 } from "@chakra-ui/react";
 import { create } from "../../store/slices/card";
-import { formatDate } from "../../utils/date"
+import { formatDate } from "../../utils/date";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function CardForm({ disclosure }) {
@@ -52,7 +52,7 @@ export default function CardForm({ disclosure }) {
           backlogDays: 1,
           doingDays: 0,
           qaDays: 0,
-          finishDays: 0
+          finishDays: 0,
         })
       );
 
