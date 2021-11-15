@@ -10,36 +10,39 @@ import {
   ModalFooter,
   Input,
   FormControl,
-  FormLabel
+  FormLabel,
 } from "@chakra-ui/react";
 import { addTask } from "../../store/slices/card";
-import { useDispatch, useSelector } from 'react-redux'
-
+import { useDispatch, useSelector } from "react-redux";
 
 export default function TaskForm({ disclosure, card }) {
   const dispatch = useDispatch();
-  const { lastTaskId } = useSelector((state) => state.card)
+  const { lastTaskId } = useSelector((state) => state.card);
 
   const [description, setDescription] = useState("");
 
   const { isOpen, onClose } = disclosure;
 
-  const initialRef = React.useRef()
-  const finalRef = React.useRef()
+  const initialRef = React.useRef();
+  const finalRef = React.useRef();
 
+  const createTask = useCallback(
+    (event) => {
+      event.preventDefault();
+      dispatch(
+        addTask({
+          id: lastTaskId,
+          description,
+          done: false,
+          cardId: card.id,
+        })
+      );
 
-  const createTask = useCallback((event) => {
-    event.preventDefault()
-    dispatch(addTask({
-      id: lastTaskId,
-      description,
-      done: false,
-      cardId: card.id
-    }))
-
-    setDescription("")
-    onClose();
-  }, [card.id, description, dispatch, onClose, lastTaskId]);
+      setDescription("");
+      onClose();
+    },
+    [card.id, description, dispatch, onClose, lastTaskId]
+  );
 
   return (
     <>
@@ -58,15 +61,15 @@ export default function TaskForm({ disclosure, card }) {
               <FormControl mt={4} isRequired>
                 <FormLabel>Descrição</FormLabel>
                 <Input
-                  placeholder='Descrição'
+                  placeholder="Descrição"
                   value={description}
-                  onChange={e => setDescription(e.target.value)}
+                  onChange={(e) => setDescription(e.target.value)}
                 />
               </FormControl>
             </ModalBody>
 
             <ModalFooter>
-              <Button type="submit" colorScheme='blue' mr={3}>
+              <Button type="submit" colorScheme="blue" mr={3}>
                 Criar
               </Button>
               <Button onClick={onClose}>Cancel</Button>
@@ -75,5 +78,5 @@ export default function TaskForm({ disclosure, card }) {
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
