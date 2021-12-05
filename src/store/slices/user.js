@@ -1,11 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit'
-import julia from "../../assets/users/julia.jpg"
-import rodrigo from "../../assets/users/rodrigo.jpg"
-import maria from "../../assets/users/maria.jpg"
-
+import { createSlice } from "@reduxjs/toolkit";
+import julia from "../../assets/users/julia.jpg";
+import rodrigo from "../../assets/users/rodrigo.jpg";
+import maria from "../../assets/users/maria.jpg";
 
 export const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState: {
     users: [
       {
@@ -21,17 +20,17 @@ export const userSlice = createSlice({
       {
         id: 3,
         name: "Maria Fátima",
-        photo: maria
-      }
+        photo: maria,
+      },
     ],
   },
   reducers: {
     create: (state, action) => {
-      state.users = [...state.users, action.payload]
+      state.users = [...state.users, action.payload];
     },
   },
-})
+});
 
-export const { create, update } = userSlice.actions
+export const { create, update } = userSlice.actions;
 
-export default userSlice.reducer
+export default userSlice.reducer;
