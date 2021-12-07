@@ -1,17 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const wipSlice = createSlice({
-  name: 'wip',
+  name: "wip",
   initialState: {
-    wips: []
+    wips: [],
   },
   reducers: {
     addWip: (state, action) => {
-      state.wips = [...state.wips, action.payload]
+      state.wips = [...state.wips, action.payload];
     },
   },
-})
+});
 
-export const { addWip } = wipSlice.actions
+export const { addWip } = wipSlice.actions;
 
-export default wipSlice.reducer
+export default wipSlice.reducer;
