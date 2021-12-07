@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
 import cardReducer from "./slices/card";
 import userReducer from "./slices/user";
 import dateReducer from "./slices/date";
@@ -9,6 +9,6 @@ export default configureStore({
     card: cardReducer,
     user: userReducer,
     date: dateReducer,
-    wip: wipReducer
+    wip: wipReducer,
   },
-})
+});
