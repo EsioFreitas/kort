@@ -5,15 +5,15 @@ export const formatDate = (date) => {
     padTo2Digits(date.getDate()),
     padTo2Digits(date.getMonth() + 1),
     date.getFullYear(),
-  ].join('/');
-}
+  ].join("/");
+};
 
 export const lastDays = (actualDate, days) => {
   let results = [];
   for (let i = 0; i < days; i++) {
-    let d = new Date(actualDate.getTime())
+    let d = new Date(actualDate.getTime());
     d.setDate(d.getDate() - i);
-    results.push(formatDate(d))
+    results.push(formatDate(d));
   }
   return results;
-}
+};
