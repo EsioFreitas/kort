@@ -1,4 +1,4 @@
-export default {
+const data = {
   finished: {
     id: 1,
     name: "Finalizado",
@@ -45,3 +45,5 @@ export default {
     },
   ],
 };
+
+export default data;
