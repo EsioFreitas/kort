@@ -8,14 +8,14 @@ import Routes from "./Routes";
 import "driver.js/dist/driver.min.css";
 
 ReactDOM.render(
-    <React.StrictMode>
-        <ReduxProvider store={store}>
-            <ChakraProvider>
-                <BrowserRouter>
-                    <Routes />
-                </BrowserRouter>
-            </ChakraProvider>
-        </ReduxProvider>
-    </React.StrictMode>,
-    document.getElementById("root")
+  <React.StrictMode>
+    <ReduxProvider store={store}>
+      <ChakraProvider>
+        <BrowserRouter>
+          <Routes />
+        </BrowserRouter>
+      </ChakraProvider>
+    </ReduxProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
