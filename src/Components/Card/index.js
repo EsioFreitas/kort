@@ -21,11 +21,11 @@ export default function Card({ data, id }) {
   const { users } = useSelector((state) => state.user);
   const { date: today } = useSelector((state) => state.date);
 
+  const { id: cardId, title, description, status, blocked, userId } = data;
+
   const doingCards = useMemo(() => {
     return cards.filter((card) => card.status === "doing");
   }, [cards]);
-
-  const { id: cardId, title, description, status, blocked, userId } = data;
 
   const cardTasks = useMemo(() => {
     if (tasks.length > 0) {
