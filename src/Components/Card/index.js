@@ -34,6 +34,13 @@ export default function Card({ data, id }) {
     return [];
   }, [cardId, tasks]);
 
+  const user = useMemo(() => {
+    if (users.length > 0) {
+      return users.find((el) => el.id === Number(userId));
+    }
+    return {};
+  }, [userId, users]);
+
   const donePercentage = useMemo(() => {
     if (!cardTasks) {
       return 0;
@@ -42,13 +49,6 @@ export default function Card({ data, id }) {
       return ~~((100 / cardTasks.length) * doneCards);
     }
   }, [cardTasks]);
-
-  const user = useMemo(() => {
-    if (users.length > 0) {
-      return users.find((el) => el.id === Number(userId));
-    }
-    return {};
-  }, [userId, users]);
 
   const finished = useMemo(() => status === "finished", [status]);
 
