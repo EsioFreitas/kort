@@ -2,7 +2,6 @@ const throughputDescription = `
   <p>Essa métrica é o Throughput, o qual indica quantos cartões entregamos em uma contagem determinada de tempo.</p>
 
   <a href="https://kanbanize.com/pt/recursos-kanban/metricas-kanban-pt" target="_blank" style="color: blue; font-weight: bold;  text-decoration: underline;">Para saber mais! </a>
-
 `;
 
 const tasksDescription = `
@@ -11,7 +10,6 @@ const tasksDescription = `
   <p>Você também pode alterar o status de uma task preenchendo a checkbox indicada.</p>
 
   <a href="https://kanbanize.com/pt/recursos-kanban/primeiros-passos/priorizando-tarefas-com-kanban" target="_blank" style="color: blue; font-weight: bold;  text-decoration: underline;">Para saber mais! </a>
-
 `;
 
 const cardCommandDescription = `
