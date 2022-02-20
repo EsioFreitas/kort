@@ -14,6 +14,22 @@ export default function MainPage() {
     return new Driver();
   }, []);
 
+  const doingCards = useMemo(() => {
+    return cards.filter((card) => card.status === "doing");
+  }, [cards]);
+
+  const qaCards = useMemo(() => {
+    return cards.filter((card) => card.status === "qa");
+  }, [cards]);
+
+  const finishedCards = useMemo(() => {
+    return cards.filter((card) => card.status === "finished");
+  }, [cards]);
+
+  const backlogCards = useMemo(() => {
+    return cards.filter((card) => card.status === "backlog");
+  }, [cards]);
+
   const [tutorial, setTutorial] = React.useState(true);
 
   React.useEffect(() => {
@@ -65,22 +81,6 @@ export default function MainPage() {
     height: "4.5rem",
     width: "99.5%",
   };
-
-  const backlogCards = useMemo(() => {
-    return cards.filter((card) => card.status === "backlog");
-  }, [cards]);
-
-  const doingCards = useMemo(() => {
-    return cards.filter((card) => card.status === "doing");
-  }, [cards]);
-
-  const qaCards = useMemo(() => {
-    return cards.filter((card) => card.status === "qa");
-  }, [cards]);
-
-  const finishedCards = useMemo(() => {
-    return cards.filter((card) => card.status === "finished");
-  }, [cards]);
 
   return (
     <Layout title="Quadro Loja de Produtos">
