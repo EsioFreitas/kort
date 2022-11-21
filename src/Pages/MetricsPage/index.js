@@ -89,11 +89,6 @@ export default function MetricsPage() {
 
   const weekDays = useMemo(() => lastDays(today, 15).reverse(), [today]);
 
-  const todayWIP = useMemo(() => {
-    const doingCards = cards.filter((card) => card.status === "doing");
-    return doingCards.length;
-  }, [cards]);
-
   const WIPData = useMemo(() => {
     return wips.filter((wip) => weekDays.includes(wip.date));
   }, [weekDays, wips]);
@@ -117,6 +112,11 @@ export default function MetricsPage() {
   const leadTimeData = useMemo(() => {
     return cards.filter((card) => weekDays.includes(card.createdAt));
   }, [cards, weekDays]);
+
+  const todayWIP = useMemo(() => {
+    const doingCards = cards.filter((card) => card.status === "doing");
+    return doingCards.length;
+  }, [cards]);
 
   const chartProps = {
     width: 600,

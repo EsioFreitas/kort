@@ -18,6 +18,12 @@ export default function MainPage() {
     return cards.filter((card) => card.status === "doing");
   }, [cards]);
 
+  const backlogCards = useMemo(() => {
+    return cards.filter((card) => card.status === "backlog");
+  }, [cards]);
+
+  const [tutorial, setTutorial] = React.useState(true);
+
   const qaCards = useMemo(() => {
     return cards.filter((card) => card.status === "qa");
   }, [cards]);
@@ -25,13 +31,6 @@ export default function MainPage() {
   const finishedCards = useMemo(() => {
     return cards.filter((card) => card.status === "finished");
   }, [cards]);
-
-  const backlogCards = useMemo(() => {
-    return cards.filter((card) => card.status === "backlog");
-  }, [cards]);
-
-  const [tutorial, setTutorial] = React.useState(true);
-
   React.useEffect(() => {
     if (!tutorial) return;
 
