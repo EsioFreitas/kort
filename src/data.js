@@ -1,4 +1,9 @@
 export default {
+  finished: {
+    id: 1,
+    name: "Finalizado",
+    cards: [],
+  },
   backlog: {
     id: 1,
     name: "Backlog",
@@ -20,11 +25,6 @@ export default {
         ],
       },
     ],
-  },
-  finished: {
-    id: 1,
-    name: "Finalizado",
-    cards: [],
   },
   sections: [
     {
