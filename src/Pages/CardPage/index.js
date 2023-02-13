@@ -124,6 +124,10 @@ export default function CardPage() {
     [blocked, dispatch, priority, releaseDate, toast, userId]
   );
 
+  const cardId = useMemo(() => {
+    return pathname.split("/")[2];
+  }, [pathname]);
+
   const card = useMemo(() => {
     if (cards.length > 0) {
       const innerCard = cards.find((el) => el.id === Number(cardId));
@@ -149,10 +153,6 @@ export default function CardPage() {
     }
     return {};
   }, [userId, users]);
-
-  const cardId = useMemo(() => {
-    return pathname.split("/")[2];
-  }, [pathname]);
 
   return (
     <Layout>
